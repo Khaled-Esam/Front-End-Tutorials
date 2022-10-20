@@ -1,0 +1,45 @@
+/* 
+    -Position Fixed to prevent overflow and scroll if width increases
+    -Alternate property in animation is very important to make the animation move smoothly
+*/
+
+.page {
+  height: 100vh;
+}
+.page::before {
+  content: "";
+  position: fixed;
+  background-color: #2196f3;
+  top: 200px;
+  width: 300%;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%) skew(0, -10deg);
+  -webkit-transform: translateX(-50%) skew(0, -10deg);
+  -moz-transform: translateX(-50%) skew(0, -10deg);
+  -ms-transform: translateX(-50%) skew(0, -10deg);
+  -o-transform: translateX(-50%) skew(0, -10deg);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  animation: wave 10s infinite ease-in-out alternate;
+  -webkit-animation: wave 10s infinite ease-in-out alternate;
+}
+@keyframes wave {
+  from {
+    transform: translateX(-50%) skew(0, -10deg);
+    -webkit-transform: translateX(-50%) skew(0, -10deg);
+    -moz-transform: translateX(-50%) skew(0, -10deg);
+    -ms-transform: translateX(-50%) skew(0, -10deg);
+    -o-transform: translateX(-50%) skew(0, -10deg);
+  }
+  to {
+    transform: translateX(-30%) skew(10deg, 0);
+    -webkit-transform: translateX(-30%) skew(10deg, 0);
+    -moz-transform: translateX(-30%) skew(10deg, 0);
+    -ms-transform: translateX(-30%) skew(10deg, 0);
+    -o-transform: translateX(-30%) skew(10deg, 0);
+  }
+}

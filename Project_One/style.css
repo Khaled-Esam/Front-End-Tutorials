@@ -1,0 +1,12 @@
+div {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.one.two {
+}

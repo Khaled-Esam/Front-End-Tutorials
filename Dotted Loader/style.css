@@ -1,0 +1,61 @@
+/* Notes */
+/* 
+    - If div and before have the same animation duration then the animation in the before does not work
+*/
+
+.dotted {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-top: -25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 3px #009688;
+  border-style: dashed dashed solid solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: load 2s infinite linear;
+  -webkit-animation: load 2s infinite linear;
+}
+
+.dotted::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 3px #4caf50;
+  border-style: solid dashed solid dashed;
+  animation: load-2 1s infinite linear;
+  -webkit-animation: load-2 1s infinite linear;
+}
+
+@keyframes load {
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes load-2 {
+  to {
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+  }
+}

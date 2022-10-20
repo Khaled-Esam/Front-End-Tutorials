@@ -1,0 +1,84 @@
+/* 
+  -The transition does not work with display : none, we can replace it by overflow : hidden
+  -We can't reset the top property by using the bottom property only, we should write top : auto then write the bottom property that we need
+ */
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 200px auto;
+  border: none;
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-size: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+button::before {
+  content: "My Awesome Tooltip";
+  position: absolute;
+  width: 180px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  font-size: 15px;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  cursor: default;
+  opacity: 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  border: 12px solid;
+  border-color: #333 transparent transparent transparent;
+  cursor: default;
+  opacity: 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+button:hover::before,
+button:hover::after {
+  opacity: 1;
+}
+[data-attr="bottom"]::before {
+  top: auto !important;
+  bottom: -50px;
+}
+[data-attr="bottom"]::after {
+  top: auto !important;
+  bottom: -20px;
+  border-color: transparent transparent #333 transparent;
+}

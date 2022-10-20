@@ -1,0 +1,40 @@
+body {
+  background-color: black;
+}
+.load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+}
+.load div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: red;
+  margin: 0 4px;
+  animation-name: load;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+.load .two {
+  animation-delay: 0.333333s;
+}
+.load .three {
+  animation-delay: 0.66666666s;
+}
+@keyframes load {
+  to {
+    opacity: 0.3;
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+  }
+}
